@@ -1,26 +1,6 @@
 @import "reset";
-
-:root {
-  --white: #fff;
-  --black: #000;
-  --gray: #333;
-  --green: #726A3B;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  padding-top: 56px;
-  overflow-x: hidden;
-}
-
-a {
-
-  &,
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-}
+@import "common";
+@import "navigation";
 
 #our-story {
   position: relative;
@@ -39,75 +19,6 @@ footer {
   max-width: 1140px;
   padding-left: 15px;
   padding-right: 15px;
-}
-
-textarea {
-  resize: none;
-}
-
-.btn-circle {
-  svg {
-    background: var(--green);
-    color: var(--white);
-    border-radius: 50%;
-    padding: 20px;
-    fill: currentColor;
-    height: auto;
-    max-width: 66vmin;
-    transform-origin: center;
-    width: 66%;
-  }
-}
-
-p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-
-  &:not(:last-child) {
-    margin-bottom: 24px;
-  }
-}
-
-b,
-strong {
-  font-weight: 500;
-}
-
-.header {
-  &-site {
-    background: #726A3B;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 5;
-
-    &-wrapper {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-    }
-
-    &-nav {
-      &-list {
-        display: inline-block;
-
-        &-link {
-          padding: 16px 8px;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 18px;
-          color: var(--white);
-        }
-      }
-    }
-  }
 }
 
 .hero-unit {
