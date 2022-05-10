@@ -6,12 +6,19 @@
     h1 {
       font-style: normal;
       font-weight: 500;
-      font-size: 48px;
-      line-height: 70px;
       text-align: center;
       color: var(--black);
-      max-width: 70%;
-      margin: 0 auto 80px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 150%;
+      max-width: 492px;
+
+      @include interpolate("font-size", 768px, 26px, 1200px, 48px, "ease-in");
+      @include interpolate("margin-bottom", 768px, 28px, 1200px, 80px, "ease-in");
+
+      @media(min-width: 768px) {
+        max-width: 70%;
+      }
     }
 
     .hero-unit-image {
@@ -21,7 +28,6 @@
         display: block;
         margin: 0 auto;
         position: relative;
-
       }
     }
   }
