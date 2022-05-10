@@ -7,6 +7,12 @@
   --primary-font: 'Montserrat', sans-serif;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -18,7 +24,15 @@ body {
 }
 
 img {
-  vertical-align: baseline;
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
 }
 
 a {
@@ -51,33 +65,16 @@ strong {
   font-weight: 500;
 }
 
-@media (min-width: 768px) {
-  .page__grid {
-    backface-visibility: hidden;
-    bottom: 0;
-    display: block;
-    left: 0;
-    perspective: 1000;
-    pointer-events: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: -1;
-
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      position: relative;
-
-      span {
-        background-color: var(--border-color);
-        display: block;
-        height: 100vh;
-        width: 1px;
-      }
-    }
-  }
+header,
+main,
+footer {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px;
+  padding-left: 15px;
 }
 
 .circle-text,
@@ -117,6 +114,35 @@ strong {
   }
 }
 
+@media (min-width: 768px) {
+  .page__grid {
+    backface-visibility: hidden;
+    bottom: 0;
+    display: block;
+    left: 0;
+    perspective: 1000;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+
+      span {
+        background-color: var(--border-color);
+        display: block;
+        height: 100vh;
+        width: 1px;
+      }
+    }
+  }
+}
+
 .circle-text {
   top: initial;
   bottom: -60px;
@@ -152,21 +178,4 @@ strong {
 
 #our-story {
   position: relative;
-}
-
-.container,
-.header-site-wrapper,
-.hero-unit-wrapper,
-.our-story-wrapper,
-.ramara-way-wrapper,
-.ramara-promise-wrapper,
-.ramara-variety-wrapper,
-.meet-the-team-wrapper,
-.partner-with-us-wrapper,
-footer {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1140px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
