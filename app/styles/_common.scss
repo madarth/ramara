@@ -3,13 +3,22 @@
   --black: #000;
   --gray: #333;
   --green: #726A3B;
+  --border-color: rgba(0, 0, 0, .08);
   --primary-font: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--primary-font);
-  padding-top: 56px;
+  padding-top: 74px;
   overflow-x: hidden;
+}
+
+img {
+  vertical-align: baseline;
 }
 
 a {
@@ -42,17 +51,109 @@ strong {
   font-weight: 500;
 }
 
-.btn-circle {
-  display: none;
-  svg {
-    background: var(--green);
-    color: var(--white);
-    border-radius: 50%;
-    padding: 20px;
-    fill: currentColor;
-    height: auto;
-    max-width: 66vmin;
-    transform-origin: center;
-    width: 66%;
+@media (min-width: 768px) {
+  .page__grid {
+    backface-visibility: hidden;
+    bottom: 0;
+    display: block;
+    left: 0;
+    perspective: 1000;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+
+      span {
+        background-color: var(--border-color);
+        display: block;
+        height: 100vh;
+        width: 1px;
+      }
+    }
   }
+}
+
+.circle-text,
+.circle-text2 {
+  z-index: 4;
+  cursor: pointer;
+  position: absolute;
+  right: 140px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  strong {
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    animation: text_rotate 10s linear infinite;
+  }
+
+  span {
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--white);
+    position: absolute;
+    left: 50%;
+    transform-origin: 0 calc(120px / 2);
+  }
+}
+
+.circle-text {
+  top: initial;
+  bottom: -60px;
+}
+
+.circle-text2 {
+  bottom: -60px;
+  left: -60px;
+}
+
+@keyframes text_rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+#our-story {
+  position: relative;
+}
+
+.container,
+.header-site-wrapper,
+.hero-unit-wrapper,
+.our-story-wrapper,
+.ramara-way-wrapper,
+.ramara-promise-wrapper,
+.ramara-variety-wrapper,
+.meet-the-team-wrapper,
+.partner-with-us-wrapper,
+footer {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
