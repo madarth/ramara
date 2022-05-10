@@ -1,3 +1,4 @@
+@import "interpolate";
 @import "reset";
 @import "common";
 @import "navigation";
@@ -140,8 +141,10 @@ footer {
 
 #ramara-way {
   background-color: var(--green);
-  padding-top: 112px;
-  padding-bottom: 112px;
+  @include interpolate("padding-top", 768px, 56px, 992px, 112px, "ease-in");
+  @include interpolate("padding-bottom", 768px, 56px, 992px, 112px, "ease-in");
+  // padding-top: 112px;
+  // padding-bottom: 112px;
 
   .problem {
     display: flex;
@@ -203,7 +206,8 @@ footer {
 }
 
 .ramara-promise-wrapper {
-  padding-top: 112px;
+  // padding-top: 112px;
+  @include interpolate("padding-top", 768px, 56px, 992px, 112px, "ease-in");
 
   h3 {
     max-width: 298px;
@@ -332,116 +336,7 @@ footer {
   }
 }
 
-#partner-with-us {
-  position: relative;
 
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: url('../images/almond-image.png') no-repeat center;
-    width: 408px;
-    height: 600px;
-  }
 
-  .partner-with-us-wrapper {
-    max-width: 670px;
-    padding-top: 112px;
-    padding-bottom: 112px;
-
-    h3 {
-      font-weight: 500;
-      font-size: 48px;
-      line-height: 59px;
-      margin-bottom: 52px;
-      color: var(--gray);
-    }
-
-    p {
-      margin-bottom: 46px;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 140%;
-      color: var(--gray);
-
-      a {
-        color: var(--gray);
-      }
-    }
-  }
-}
-
-form {
-  .input-half {
-    display: flex;
-
-    input {
-      width: calc(50% - 15px);
-
-      &:first-child {
-        margin-right: 15px;
-      }
-
-      &:last-child {
-        margin-left: 15px;
-      }
-    }
-  }
-
-  input,
-  textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 46px;
-    color: var(--gray);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
-    padding-bottom: 6px;
-    border: 0;
-    border-bottom: 1px solid rgba(51, 51, 51, 0.6);
-  }
-
-  button,
-  input[type="button"] {
-    padding: 12px 60px;
-    color: var(--white);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
-    background: var(--green);
-    border: 1px solid var(--green);
-    border-radius: 4px;
-    font-family: 'Montserrat';
-    text-transform: capitalize;
-  }
-}
-
-footer {
-  border-top: 1px solid rgba(51, 51, 51, 0.2);
-  padding: 16px 0;
-  margin: 16px auto 0;
-  display: flex;
-  justify-content: space-between;
-
-  p,
-  a {
-    margin-bottom: 0 !important;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    color: var(--gray);
-  }
-
-  ul {
-    li {
-      display: inline-block;
-
-      &:nth-child(1) {
-        margin-right: 16px;
-      }
-    }
-  }
-}
+@import "contact";
+@import "footer";

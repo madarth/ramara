@@ -43,6 +43,7 @@ strong {
 }
 
 .btn-circle {
+  display: none;
   svg {
     background: var(--green);
     color: var(--white);
@@ -53,17 +54,5 @@ strong {
     max-width: 66vmin;
     transform-origin: center;
     width: 66%;
-  }
-}
-
-
-.re {
-  width: 100%;
-  textPath {
-    font-size: 39px;
-    font-family: "Montserrat";
-    text-transform: uppercase;
-    letter-spacing: 20px;
-    fill: #fff;
   }
 }
