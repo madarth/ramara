@@ -145,9 +145,10 @@
   .solution {
     color: var(--white);
     padding-top: 82px;
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
     &-content {
       flex: 1 0 402px;
       max-width: 402px;
@@ -156,10 +157,27 @@ align-items: flex-start;
     &-image {
       position: relative;
 
-      img:nth-child(2) {
+      .california {
+        position: relative;
+
+        .warehouse {
+          position: absolute;
+          left: 130px;
+          bottom: 120px;
+        }
+      }
+      .arrow{
         position: absolute;
+        top: 300px;
+        left: 260px;
+
+      }
+      .india {
+        margin-top: -120px;
+        margin-left: 420px;
       }
     }
+
 
     .solution-content {
       h3 {

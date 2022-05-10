@@ -81,7 +81,8 @@ strong {
 }
 
 .circle-text,
-.circle-text2 {
+.circle-text2,
+.circle-text3 {
   z-index: 4;
   cursor: pointer;
   position: absolute;
@@ -124,6 +125,18 @@ strong {
 .circle-text2 {
   bottom: -60px;
   left: -60px;
+}
+
+.circle-text3 {
+  background-color: var(--white);
+
+  span {
+    color: var(--green);
+  }
+}
+
+.solution-content {
+  position: relative;
 }
 
 @keyframes text_rotate {
