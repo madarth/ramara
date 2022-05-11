@@ -1,6 +1,9 @@
 .hero-unit {
   &-content {
+    margin-top: 40px;
+    @media(min-width: 768px) {
     margin-top: 80px;
+    }
     text-align: center;
 
     h1 {

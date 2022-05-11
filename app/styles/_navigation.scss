@@ -6,6 +6,20 @@
     left: 0;
     right: 0;
     z-index: 5;
+     z-index: 1;
+     color: var(--white);
+
+     &:before {
+       content: "";
+       display: block;
+       position: absolute;
+       background: var(--green);
+       top: 0;
+       bottom: 0;
+       left: -9999em;
+       right: -9999em;
+       z-index: -1;
+     }
 
     &-wrapper {
       padding-top: 12px;
