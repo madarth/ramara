@@ -1,0 +1,235 @@
+.ramara-way-wrapper {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: var(--gray);
+    top: 0;
+    bottom: 0;
+    left: -9999em;
+    right: -9999em;
+    z-index: -1;
+  }
+
+  .problem {
+    background-color: var(--gray);
+    @include interpolate("padding-top", 768px, 56px, 992px, 112px, "ease-in");
+    @include interpolate("padding-bottom", 768px, 56px, 992px, 112px, "ease-in");
+    display: grid;
+    grid-gap: 30px;
+
+    @media(min-width: 768px) {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &-content {
+      position: relative;
+
+      h3 {
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 46px;
+        margin-bottom: 24px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+
+        &:last-child {
+          font-weight: 500;
+          font-size: 28px;
+          line-height: 120%;
+          padding-top: 30px;
+
+          @media(min-width: 768px) {
+            padding-top: 0px;
+            font-size: 30px;
+            line-height: 140%;
+            position: absolute;
+            left: 0;
+            bottom: -94px;
+          }
+        }
+      }
+    }
+
+    &-image {
+      display: grid;
+      grid-gap: 30px;
+
+      &.mobile {
+        display: grid;
+      }
+
+      &.desktop {
+        display: none;
+      }
+
+      @media(min-width: 576px) {
+        margin-bottom: 40px;
+        grid-template-columns: 1fr 1fr;
+
+        img:first-child {
+          margin-bottom: 0;
+        }
+
+        img:last-child {
+          margin-bottom: 0;
+          margin-top: 30px;
+        }
+      }
+
+      @media(min-width: 768px) {
+        margin-bottom: 0px;
+
+        &.mobile {
+          display: none;
+        }
+
+        &.desktop {
+          display: grid;
+        }
+
+        img:last-child {
+          margin-top: 60px;
+        }
+      }
+
+
+    }
+  }
+
+  .solution {
+    background-color: var(--gray);
+    margin-top: -1px;
+
+    @media(min-width: 768px) {
+      display: flex;
+    }
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include interpolate("padding-top", 768px, 56px, 992px, 112px, "ease-in");
+    @include interpolate("padding-bottom", 768px, 56px, 992px, 112px, "ease-in");
+
+
+    &-content {
+      max-width: 360px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+
+      @media(min-width: 768px) {
+        margin: initial;
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 46px;
+        margin-bottom: 24px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+
+      .circle-text3 {
+        position: relative;
+        left: 0;
+        right: 0;
+
+        @media(min-width: 768px) {
+          position: absolute;
+          top: initial;
+          bottom: -160px;
+        }
+      }
+    }
+
+    &-image {
+      position: relative;
+      margin: 0 auto;
+      width: 260px;
+      margin: 0 auto;
+
+      @media(min-width: 768px) {
+        width: auto;
+        margin: initial;
+      }
+
+      .california {
+        position: relative;
+        width: 260px;
+        margin: 0 auto;
+
+        @media(min-width: 768px) {
+          width: auto;
+          margin: initial;
+        }
+
+        .warehouse {
+          position: absolute;
+          left: 92px;
+          top: 120px;
+
+          @media(min-width: 768px) {
+            left: 130px;
+            top: initial;
+            bottom: 120px;
+          }
+        }
+      }
+
+      .arrow {
+        position: absolute;
+        left: 20px;
+        bottom: 210px;
+        width: 200px;
+        transform: rotate(64deg);
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+
+        @media(min-width: 768px) {
+          top: 300px;
+          left: 260px;
+          bottom: initial;
+          transform: initial;
+        }
+      }
+
+      .india {
+        margin-bottom: 30px;
+        display: block;
+        text-align: center;
+        margin: 0 auto 30px;
+
+        @media(min-width: 768px) {
+          margin-top: -120px;
+          margin-left: 360px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
