@@ -16,22 +16,20 @@
 
   .partner-with-us-wrapper {
     max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
     @include interpolate("padding-top", 768px, 56px, 992px, 112px, "ease-in");
     @include interpolate("padding-bottom", 768px, 56px, 992px, 112px, "ease-in");
-    // padding-top: 112px;
-    // padding-bottom: 112px;
 
     h3 {
       font-weight: 500;
       font-size: 48px;
       line-height: 59px;
-      // margin-bottom: 52px;
       @include interpolate("margin-bottom", 768px, 26px, 992px, 52px, "ease-in");
       color: var(--gray);
     }
 
     p {
-      // margin-bottom: 46px;
       @include interpolate("margin-bottom", 768px, 23px, 992px, 46px, "ease-in");
       font-weight: 400;
       font-size: 16px;
