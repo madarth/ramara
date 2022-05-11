@@ -1,0 +1,37 @@
+.address {
+  &-wrapper {
+    display: flex;
+    @include interpolate("padding-bottom", 768px, 56px, 992px, 112px, "ease-in");
+    .title {
+      color: var(--gray);
+      margin-bottom: 24px;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 124%;
+
+      @media(min-width: 768px) {
+        max-width: 344px;
+        font-size: 32px;
+        line-height: 124%;
+      }
+
+    }
+  }
+
+  &-list {
+    display: flex;
+  }
+
+
+  &-lists {
+    padding-left: 30px;
+
+    address {
+      margin-bottom: 30px;
+
+      +address {
+        padding-left: 30px;
+      }
+    }
+  }
+}
