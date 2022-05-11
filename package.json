@@ -1,8 +1,5 @@
 {
   "private": true,
-  "engines": {
-    "node": ">=4"
-  },
   "dependencies": {
     "jquery": "^3.4.1",
     "modernizr": "^3.7.1"
