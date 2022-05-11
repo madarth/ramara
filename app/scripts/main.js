@@ -1,29 +1,29 @@
 console.log('\'Allo \'Allo!');
 
-let text = document.querySelector(".circle-text strong");
+let text = document.querySelector('.circle-text strong');
 // console.log(text);
-text.innerHTML = text.innerText.split("").map(
+text.innerHTML = text.innerText.split('').map(
   (char, i) =>
     `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
-).join("");
+).join('');
 
-let text2 = document.querySelector(".circle-text2 strong");
+let text2 = document.querySelector('.circle-text2 strong');
 console.log(text2);
 text2.innerHTML = text2.innerText
-  .split("")
+  .split('')
   .map(
     (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
   )
-  .join("");
+  .join('');
 
-let text3 = document.querySelector(".circle-text3 strong");
+let text3 = document.querySelector('.circle-text3 strong');
 // console.log(text);
 text3.innerHTML = text3.innerText
-  .split("")
+  .split('')
   .map(
     (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
   )
-  .join("");
+  .join('');
 
 
 // Select all links with hashes
@@ -52,7 +52,7 @@ $('a[href*="#"]')
           // Must change focus!
           var $target = $(target);
           $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
+          if ($target.is(':focus')) { // Checking if the target was focused
             return false;
           } else {
             $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
