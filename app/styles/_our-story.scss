@@ -7,15 +7,15 @@
 
     @media (min-width: 768px) {
       &:before {
-        content: "";
-        display: block;
-        background: url('../images/our-story-illustration.png') no-repeat center;
-        background-size: 70%;
-        position: absolute;
-        right: 30px;
-        bottom: 0;
-        width: 308px;
-        height: 300px;
+        // content: "";
+        // display: block;
+        // background: url('../images/our-story-illustration.png') no-repeat center;
+        // background-size: 70%;
+        // position: absolute;
+        // right: 30px;
+        // bottom: 0;
+        // width: 308px;
+        // height: 300px;
 
       }
     }
@@ -55,6 +55,18 @@
             background-size: contain;
           }
         }
+      }
+
+      @media(min-width: 992px) {
+      img{
+        &:nth-child(6){
+          margin-top: -140px;
+        }
+
+        &:nth-child(7) {
+          margin-top: -40px;
+        }
+      }
       }
     }
 

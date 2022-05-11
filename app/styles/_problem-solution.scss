@@ -212,9 +212,16 @@
 
         @media(min-width: 768px) {
           top: 300px;
-          left: 260px;
+          left: 210px;
           bottom: initial;
+          -webkit-transform: initial;
           transform: initial;
+          width: 40%;
+
+          // top: 300px;
+          // left: 260px;
+          // bottom: initial;
+          // transform: initial;
         }
       }
 
