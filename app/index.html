@@ -130,7 +130,7 @@
               alt="">
             <img src="./images/our-story-4.png"
               alt="">
-            <p class="text-nutshell"><b>This is us,</b><b>in a nutshell.</b></p>
+            <p class="text-nutshell"><b>This is our story,</b><b>in a nutshell.</b></p>
           </div>
 
         </div>
@@ -197,7 +197,6 @@
       <section id="ramara-promise">
         <div class="ramara-promise-wrapper">
           <h3 class="title">The Ramara Promise</h3>
-          <p>Ramara almonds come in 6 varieties, each of great quality!</p>
           <div class="promise-lists">
             <div class="promise-image">
               <img src="./images/promise.png"
@@ -220,9 +219,9 @@
         </div>
       </section>
       <section id="ramara-variety">
-        <div id="ramara-variety-wrapper">
           <div class="ramara-variety-wrapper">
-            <ul>
+            <h3 class="title">The Ramara Promise</h3>
+             <ul class="promise-list">
               <li>Nonpareil</li>
               <li>Butte</li>
               <li>Padre</li>
@@ -230,7 +229,6 @@
               <li>Monterey</li>
               <li>Independent</li>
             </ul>
-          </div>
         </div>
       </section>
       <section id="meet-the-team">
@@ -248,8 +246,11 @@
           <div class="meet-the-team-grid">
             <div class="meet-the-team-card">
               <div class="team-card-image">
-                <img src="./images/team-1.png"
-                  alt="">
+                <picture>
+                <source media="(min-width:320px)" srcset="./images/Jahir-Hussain-small.png">
+                <source media="(min-width:1200px)" srcset="./images/Jahir-Hussain-large.png">
+                <img src="./images/Jahir-Hussain-large.png" alt="Jahir Hussain">
+              </picture>
               </div>
               <div class="team-card-content">
                 <h3 class="team-card-content-title"><strong>Jahir Hussain</strong>Managing Director at Ramara</h3>
@@ -266,8 +267,14 @@
             </div>
             <div class="meet-the-team-card">
               <div class="team-card-image">
-                <img src="./images/team-2.png"
-                  alt="">
+                <picture>
+                  <source media="(min-width:320px)"
+                    srcset="./images/Aravindhan-Thayaparan-small.png">
+                  <source media="(min-width:1200px)"
+                    srcset="./images/Aravindhan-Thayaparan-large.png">
+                  <img src="./images/Aravindhan-Thayaparan-large.png"
+                    alt="Aravindhan Thayaparan">
+                </picture>
               </div>
               <div class="team-card-content">
                 <h3 class="team-card-content-title"><strong>Aravindhan Thayaparan</strong>DirectorRole & Designation at
@@ -284,8 +291,14 @@
             </div>
             <div class="meet-the-team-card">
               <div class="team-card-image">
-                <img src="./images/team-3.png"
-                  alt="">
+                <picture>
+                  <source media="(min-width:320px)"
+                    srcset="./images/Ramesh-Nagarajah-small.png">
+                  <source media="(min-width:1200px)"
+                    srcset="./images/Ramesh-Nagarajah-large.png">
+                  <img src="./images/Ramesh-Nagarajah-large.png"
+                    alt="Ramesh Nagarajah">
+                </picture>
               </div>
               <div class="team-card-content">
                 <h3 class="team-card-content-title"><strong>Ramesh Nagarajah</strong>Managing Director at Ramara</h3>
@@ -328,7 +341,7 @@
                 id=""
                 cols="30"
                 rows="1"
-                placeholder="Do tell us a little about what you would like from us (optional)"></textarea>
+                placeholder="Drop your query here"></textarea>
             </div>
             <button class="button">send</button>
           </form>

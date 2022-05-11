@@ -1,8 +1,27 @@
 .ramara-variety-wrapper {
   @include interpolate("padding-top", 768px, 56px, 992px, 112px, "ease-in");
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  @media(min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+
+  h3 {
+    color: var(--gray);
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 124%;
+
+    @media(min-width: 768px) {
+      max-width: 298px;
+      font-size: 38px;
+      line-height: 46px;
+    }
+
+  }
 
   ul {
     padding-left: 15px;
