@@ -1,88 +1,88 @@
-console.log("'Allo 'Allo!");
+console.log('\'Allo \'Allo!');
 
 // service worker
-if ("serviceWorker" in navigator) {
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register("./sw.js")
+    .register('./sw.js')
     .then((serviceWorker) => {
-      console.log("Service Worker registered: ", serviceWorker);
+      console.log('Service Worker registered: ', serviceWorker);
     })
     .catch((error) => {
-      console.error("Error registering the Service Worker: ", error);
+      console.error('Error registering the Service Worker: ', error);
     });
 }
 
 // image lazy load
-if ("loading" in HTMLImageElement.prototype) {
+if ('loading' in HTMLImageElement.prototype) {
   const images = document.querySelectorAll('img[loading="lazy"]');
   images.forEach((img) => {
     img.src = img.dataset.src;
   });
 } else {
   // Dynamically import the LazySizes library
-  const script = document.createElement("script");
+  const script = document.createElement('script');
   script.src =
-    "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js";
+    'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
   document.body.appendChild(script);
 }
 
-let text = document.querySelector(".circle-text strong");
+let text = document.querySelector('.circle-text strong');
 text.innerHTML = text.innerText
-  .split("")
+  .split('')
   .map(
     (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
   )
-  .join("");
+  .join('');
 
-let text2 = document.querySelector(".circle-text2 strong");
+let text2 = document.querySelector('.circle-text2 strong');
 text2.innerHTML = text2.innerText
-  .split("")
+  .split('')
   .map(
     (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
   )
-  .join("");
+  .join('');
 
-let text3 = document.querySelector(".circle-text3 strong");
+let text3 = document.querySelector('.circle-text3 strong');
 text3.innerHTML = text3.innerText
-  .split("")
+  .split('')
   .map(
     (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
   )
-  .join("");
+  .join('');
 
 // Show menu in mobile
-$(".site-menu-icon").click(function () {
+$('.site-menu-icon').click(function () {
   var self = $(this);
-  var body = $("body");
-  var siteMenu = $(".header-site-nav");
-  var siteMenuIcon = $(".site-menu-icon");
+  var body = $('body');
+  var siteMenu = $('.header-site-nav');
+  var siteMenuIcon = $('.site-menu-icon');
 
-  if (!self.hasClass("open")) {
-    self.addClass("open");
-    siteMenu.addClass("open show");
-    body.addClass("no-scroll");
+  if (!self.hasClass('open')) {
+    self.addClass('open');
+    siteMenu.addClass('open show');
+    body.addClass('no-scroll');
   } else {
-    console.log("else");
-    self.removeClass("open");
-    siteMenu.removeClass("open show");
-    siteMenuIcon.removeClass("open show");
-    body.removeClass("no-scroll");
+    console.log('else');
+    self.removeClass('open');
+    siteMenu.removeClass('open show');
+    siteMenuIcon.removeClass('open show');
+    body.removeClass('no-scroll');
   }
 });
 
-$(".header-site-nav-list a").click(function () {
+$('.header-site-nav-list a').click(function () {
   var self = $(this);
-  var body = $("body");
-  var siteMenu = $(".header-site-nav");
-  var siteMenuIcon = $(".site-menu-icon");
+  var body = $('body');
+  var siteMenu = $('.header-site-nav');
+  var siteMenuIcon = $('.site-menu-icon');
 
-  if (!body.hasClass("no-scroll")) {
+  if (!body.hasClass('no-scroll')) {
   } else {
     console.log('admo');
-    self.removeClass("open");
-    siteMenu.removeClass("open show");
-    siteMenuIcon.removeClass("open show");
-    body.removeClass("no-scroll");
+    self.removeClass('open');
+    siteMenu.removeClass('open show');
+    siteMenuIcon.removeClass('open show');
+    body.removeClass('no-scroll');
   }
 });
 
@@ -94,18 +94,18 @@ $('a[href*="#"]')
   .click(function (event) {
     // On-page links
     if (
-      location.pathname.replace(/^\//, "") ==
-        this.pathname.replace(/^\//, "") &&
+      location.pathname.replace(/^\//, '') ==
+        this.pathname.replace(/^\//, '') &&
       location.hostname == this.hostname
     ) {
       // Figure out element to scroll to
       var target = $(this.hash);
-      target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       // Does a scroll target exist?
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
-        $("html, body").animate(
+        $('html, body').animate(
           {
             scrollTop: target.offset().top,
           },
@@ -115,11 +115,11 @@ $('a[href*="#"]')
             // Must change focus!
             var $target = $(target);
             $target.focus();
-            if ($target.is(":focus")) {
+            if ($target.is(':focus')) {
               // Checking if the target was focused
               return false;
             } else {
-              $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
+              $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
               $target.focus(); // Set focus again
             }
           }
