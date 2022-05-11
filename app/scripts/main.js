@@ -1,5 +1,31 @@
 console.log('\'Allo \'Allo!');
 
+// service worker
+// if ('serviceWorker' in navigator) {
+//   navigator.serviceWorker
+//     .register('./sw.js')
+//     .then(serviceWorker => {
+//       console.log('Service Worker registered: ', serviceWorker);
+//     })
+//     .catch(error => {
+//       console.error('Error registering the Service Worker: ', error);
+//     });
+// }
+
+// image lazy load
+if ('loading' in HTMLImageElement.prototype) {
+  const images = document.querySelectorAll('img[loading="lazy"]');
+  images.forEach((img) => {
+    img.src = img.dataset.src;
+  });
+} else {
+  // Dynamically import the LazySizes library
+  const script = document.createElement('script');
+  script.src =
+    'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
+  document.body.appendChild(script);
+}
+
 let text = document.querySelector('.circle-text strong');
 // console.log(text);
 text.innerHTML = text.innerText.split('').map(
@@ -24,6 +50,45 @@ text3.innerHTML = text3.innerText
     (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
   )
   .join('');
+
+  	// Show menu in mobile
+	$('.site-menu-icon').click(function () {
+    var self = $(this);
+    var body = $('body');
+    var siteMenu = $('.header-site-nav');
+
+    if (!self.hasClass('open')) {
+      self.addClass('open');
+      siteMenu.addClass('open show');
+      body.addClass('no-scroll');
+    } else {
+      console.log('else');
+      self.removeClass('open');
+      siteMenu.removeClass('open');
+      siteHeader.removeClass('open');
+      body.removeClass('no-scroll');
+      setTimeout(function () {
+        siteMenu.removeClass('show');
+      }, 200);
+    }
+  });
+
+	// // submenu open
+	// $(".menu-item-has-children > a").click(function (e) {
+	// 	e.preventDefault();
+	// 	$(".menu-item-has-children").toggleClass("active");
+	// 	$(".menu-item-has-children .sub-menu").toggleClass("open");
+	// });
+
+	// $(document).click(function (e) {
+	// 	$(".menu-item-has-children").each(function () {
+	// 		var container = $(".menu-item-has-children");
+	// 		if (!container.is(e.target) && container.has(e.target).length === 0) {
+	// 			$(this).removeClass("active");
+	// 			$(".menu-item-has-children .sub-menu").removeClass("open");
+	// 		}
+	// 	});
+	// });
 
 
 // Select all links with hashes

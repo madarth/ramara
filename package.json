@@ -4,14 +4,18 @@
     "node": ">=4"
   },
   "dependencies": {
+    "aos": "^2.3.4",
+    "gsap": "^3.10.4",
     "jquery": "^3.4.1",
-    "modernizr": "^3.7.1"
+    "modernizr": "^3.7.1",
+    "scrollmagic": "^2.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "autoprefixer": "^9.5.1",
     "browser-sync": "^2.26.5",
+    "critical": "^4.0.1",
     "cross-env": "^5.2.0",
     "cssnano": "^4.1.10",
     "del": "^4.1.1",
@@ -30,8 +34,15 @@
     "gulp-size": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-useref": "^3.1.6",
+    "gulp-webp": "^4.0.1",
+    "gulp-zip": "^5.1.0",
+    "gutil": "^1.6.4",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^7.0.0",
     "mkdirp": "^0.5.1",
     "mocha": "^6.1.4",
+    "vinyl-ftp": "^0.6.1",
+    "workbox-build": "^6.5.3",
     "yargs": "13.2.4"
   },
   "scripts": {

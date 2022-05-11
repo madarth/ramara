@@ -9,6 +9,8 @@ const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const { argv } = require('yargs');
+const critical = require("critical").stream;
+const workboxBuild = require("workbox-build");
 
 const $ = gulpLoadPlugins();
 const server = browserSync.create();
@@ -112,6 +114,12 @@ function html() {
     .pipe(dest('dist'));
 }
 
+function imagesWebp() {
+  return src("app/images/**/*", { since: lastRun(images) })
+    .pipe($.webp())
+    .pipe(dest("app/images"));
+}
+
 function images() {
   return src('app/images/**/*', { since: lastRun(images) })
     .pipe($.imagemin())
@@ -150,7 +158,10 @@ const build = series(
     fonts,
     extras
   ),
-  measureSize
+  criticalCss,
+  serviceWorker,
+  measureSize,
+  compressZip
 );
 
 function startAppServer() {
@@ -209,9 +220,55 @@ function startDistServer() {
   });
 }
 
+function criticalCss() {
+  return src("dist/*.html")
+    .pipe(
+      critical({
+        inline: true,
+        ignore: ["font-face"],
+        base: "dist/",
+        dimensions: [
+          {
+            height: 200,
+            width: 500,
+          },
+          {
+            height: 900,
+            width: 1300,
+          },
+        ],
+      }),
+      (err, output) => {
+        if (err) {
+          console.error(err);
+        } else if (output) {
+          console.log("Generated critical CSS");
+        }
+      }
+    )
+    .pipe(dest("dist"));
+}
+
+function serviceWorker() {
+  return workboxBuild.generateSW({
+    globDirectory: "dist",
+    globPatterns: ["**/*.{html,json,js,css}"],
+    swDest: "dist/sw.js",
+  });
+}
+
+function compressZip() {
+  return src("dist/**/*").pipe($.zip("dist.zip")).pipe(dest("./"));
+}
+
+
 let serve;
 if (isDev) {
-  serve = series(clean, parallel(styles, scripts, modernizr, fonts), startAppServer);
+  serve = series(
+    clean,
+    parallel(styles, scripts, modernizr, fonts, imagesWebp),
+    startAppServer
+  );
 } else if (isTest) {
   serve = series(clean, scripts, startTestServer);
 } else if (isProd) {
