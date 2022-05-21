@@ -59,4 +59,12 @@
   img{
     padding-left: 15px;
   }
+  .almond-image-list{
+    img{
+      display: none;
+      &:nth-child(1){
+        display: block;
+      }
+    }
+  }
 }

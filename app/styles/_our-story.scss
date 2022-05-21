@@ -1,5 +1,5 @@
   .our-story-wrapper {
-    @include interpolate("padding-top", 768px, 120px, 992px, 170px, "ease-in");
+    @include interpolate("padding-top", 768px, 120px, 992px, 340px, "ease-in");
     @include interpolate("padding-bottom", 768px, 56px, 992px, 112px, "ease-in");
     display: flex;
     justify-content: space-between;
@@ -72,8 +72,10 @@
 
 
     .text-nutshell {
-      font-weight: 500;
 
+      margin-bottom: 162px;
+
+      font-weight: 500;
       font-size: 28px;
       line-height: normal;
       @media (min-width: 768px) {
@@ -86,7 +88,6 @@
         display: block;
 
         &:last-child {
-          // padding-left: 20%;
         }
       }
     }

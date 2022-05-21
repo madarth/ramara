@@ -93,43 +93,6 @@ footer {
   padding-left: 15px;
 }
 
-.circle-text,
-.circle-text2,
-.circle-text3 {
-  z-index: 4;
-  cursor: pointer;
-  position: absolute;
-  right: 140px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background-color: var(--green);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  strong {
-    cursor: pointer;
-    border-radius: 50%;
-    position: absolute;
-    text-align: center;
-    margin: 0 auto;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    animation: text_rotate 10s linear infinite;
-  }
-
-  span {
-    cursor: pointer;
-    font-weight: 300;
-    font-size: 14px;
-    color: var(--white);
-    position: absolute;
-    left: 50%;
-    transform-origin: 0 calc(120px / 2);
-  }
-}
-
 @media (min-width: 768px) {
   .page__grid {
     backface-visibility: hidden;
@@ -159,22 +122,53 @@ footer {
   }
 }
 
+.circle-text,
+.circle-text2,
+.circle-text3 {
+  z-index: 4;
+  cursor: pointer;
+  position: absolute;
+  right: 140px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: text_rotate 10s linear infinite;
+  svg{
+    width: 100%;
+  }
+}
+
 .circle-text {
-  display: none;
   top: initial;
   bottom: -60px;
+  z-index: 15001;
+
+  svg {
+    circle {
+      fill: var(--green);
+    }
+
+    path {
+      fill: var(--white);
+    }
+  }
 }
 
 .circle-text2 {
   bottom: -60px;
   left: -60px;
-}
 
-.circle-text3 {
-  background-color: var(--white);
+  svg {
+    circle {
+      fill: var(--green);
+    }
 
-  span {
-    color: var(--green);
+    path {
+      fill: var(--white);
+    }
   }
 }
 
@@ -190,38 +184,15 @@ footer {
   padding: 0.2em 0;
 }
 
+.hero-unit {
+  z-index: 1;
+}
+
 #our-story {
+  z-index: -1;
   position: relative;
 }
 
-
-//
-
-.circleText {
-  // animation: text_rotate 10s linear infinite;
-  z-index: 1555;
-  // z-index: 4;
-  cursor: pointer;
-  position: absolute;
-  top: initial;
-  bottom: -60px;
-  right: 140px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  position: absolute;
-  overflow: visible;
-  transform-origin: center center;
-  stroke-opacity: 0;
-  background-color: var(--green);
-  text {
-    fill: #fff;
-    font-weight: 300;
-    font-size: 80px;
-    letter-spacing: 2.5px;
-  }
-
-  }
 
 @keyframes text_rotate {
   0% {
@@ -234,7 +205,7 @@ footer {
 }
 
 
-.cCompanyLogosContainer{
+.cCompanyLogosContainer {
   position: relative;
 
   .cCompanyLogo {
@@ -243,4 +214,3 @@ footer {
     opacity: 0;
   }
 }
-
