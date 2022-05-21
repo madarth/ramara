@@ -160,6 +160,7 @@ footer {
 }
 
 .circle-text {
+  display: none;
   top: initial;
   bottom: -60px;
 }
@@ -181,16 +182,6 @@ footer {
   position: relative;
 }
 
-@keyframes text_rotate {
-  0% {
-    transform: rotate(360deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 /* browserupgrade */
 .browserupgrade {
   margin: 0.2em 0;
@@ -202,3 +193,54 @@ footer {
 #our-story {
   position: relative;
 }
+
+
+//
+
+.circleText {
+  // animation: text_rotate 10s linear infinite;
+  z-index: 1555;
+  // z-index: 4;
+  cursor: pointer;
+  position: absolute;
+  top: initial;
+  bottom: -60px;
+  right: 140px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: absolute;
+  overflow: visible;
+  transform-origin: center center;
+  stroke-opacity: 0;
+  background-color: var(--green);
+  text {
+    fill: #fff;
+    font-weight: 300;
+    font-size: 80px;
+    letter-spacing: 2.5px;
+  }
+
+  }
+
+@keyframes text_rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+.cCompanyLogosContainer{
+  position: relative;
+
+  .cCompanyLogo {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
