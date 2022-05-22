@@ -1,9 +1,0 @@
-{
-  "name": "ramara farm",
-  "short_name": "rama",
-  "theme_color": "#726A3B",
-  "background_color": "#fff",
-  "display": "standalone",
-  "scope": "/",
-  "start_url": "/"
-}
