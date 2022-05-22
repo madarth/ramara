@@ -26,29 +26,6 @@ if ('loading' in HTMLImageElement.prototype) {
   document.body.appendChild(script);
 }
 
-let text = document.querySelector('.circle-text strong');
-text.innerHTML = text.innerText
-  .split('')
-  .map(
-    (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
-  )
-  .join('');
-
-let text2 = document.querySelector('.circle-text2 strong');
-text2.innerHTML = text2.innerText
-  .split('')
-  .map(
-    (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
-  )
-  .join('');
-
-let text3 = document.querySelector('.circle-text3 strong');
-text3.innerHTML = text3.innerText
-  .split('')
-  .map(
-    (char, i) => `<span style="transform: rotate(${i * 12}deg)">${char}</span>`
-  )
-  .join('');
 
 // Show menu in mobile
 $('.site-menu-icon').click(function () {
