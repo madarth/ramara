@@ -1,23 +1,33 @@
 .header {
   &-site {
-    background: var(--green);
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
     color: var(--white);
+    padding: 0;
+    max-width: initial;
 
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
+    .headerSite {
+      position: relative;
+      z-index: 1;
       background: var(--green);
-      top: 0;
-      bottom: 0;
-      left: -9999em;
-      right: -9999em;
-      z-index: -1;
+
+      &:before {
+        @media(min-width: 768px){
+          content: "";
+        }
+        display: block;
+        position: absolute;
+        background: var(--green);
+        top: 0;
+        bottom: 0;
+        left: -9999em;
+        right: -9999em;
+        z-index: -1;
+      }
     }
 
     &-wrapper {

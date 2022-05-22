@@ -81,7 +81,7 @@ strong {
   font-weight: 500;
 }
 
-header,
+.headerSite,
 main,
 footer {
   width: 100%;
@@ -90,7 +90,6 @@ footer {
   margin-right: auto;
   margin-left: auto;
   max-width: 1140px;
-  padding-left: 15px;
 }
 
 @media (min-width: 768px) {
