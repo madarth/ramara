@@ -1,7 +1,11 @@
 .meet-the-team {
-  max-width: 656px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 380px;
+
+  @media(min-width: 768px) {
+    max-width: 656px;
+  }
 
   &-wrapper {
     @include interpolate("padding-top", 768px, 56px, 992px, 112px, "ease-in");
@@ -51,9 +55,13 @@
 
   &-grid {
     margin: 0 auto;
-    max-width: 656px;
     display: grid;
     grid-template-columns: 1fr;
+    max-width: 380px;
+
+    @media(min-width: 768px) {
+      max-width: 656px;
+    }
 
     @media(min-width: 768px) {
       max-width: initial;
@@ -114,7 +122,7 @@
             display: block;
             font-weight: 500;
             font-size: 28px;
-            line-height: 80%;
+            line-height: normal;
           }
         }
 
@@ -127,11 +135,14 @@
           margin-bottom: 32px;
 
           @media(min-width: 992px) {
-            text-align: justify;
             font-size: 14px;
             padding-top: 16px;
             // margin-top: 16px;
             margin-bottom: 0px;
+          }
+
+          @media(min-width: 1200px) {
+            text-align: justify;
           }
         }
 
@@ -151,7 +162,7 @@
           &::before {
             width: calc(326px + 20px);
             height: 2px;
-            top: 62px;
+            top: 72px;
           }
         }
       }
@@ -186,8 +197,8 @@
         grid-column-start: span 2;
         justify-content: center;
         align-items: center;
-       margin-top: -112px;
-       margin-left: -420px;
+        margin-top: -112px;
+        margin-left: -420px;
 
         .team-card-content {
           width: 360px;

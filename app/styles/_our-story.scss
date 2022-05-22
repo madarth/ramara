@@ -5,21 +5,6 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    @media (min-width: 768px) {
-      &:before {
-        // content: "";
-        // display: block;
-        // background: url('../images/our-story-illustration.png') no-repeat center;
-        // background-size: 70%;
-        // position: absolute;
-        // right: 30px;
-        // bottom: 0;
-        // width: 308px;
-        // height: 300px;
-
-      }
-    }
-
     .our-story-content {
       display: grid;
       grid-gap: 30px;
@@ -57,37 +42,64 @@
         }
       }
 
-      @media(min-width: 992px) {
-      img{
-        &:nth-child(6){
-          margin-top: -140px;
+      //   @media(min-width: 992px) {
+      //   img{
+      //     &:nth-child(6){
+      //       margin-top: -140px;
+      //     }
+
+      //     &:nth-child(7) {
+      //       margin-top: -40px;
+      //     }
+      //   }
+      //   }
+      // }
+
+      .cCompanyLogosContainer {
+        position: relative;
+        display: flex;
+        display: none;
+        float: left;
+        width: 252px;
+        height: 344px;
+        @media (min-width: 1024px) {
+          display: flex;
         }
 
-        &:nth-child(7) {
-          margin-top: -40px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          display: block;
+          width: 272px;
+          height: 344px;
+        }
+
+        .cCompanyLogo {
+          margin-left: auto;
+          margin-right: auto;
+          position: absolute;
+          visibility: hidden;
+          opacity: 0;
         }
       }
-      }
-    }
 
+      .text-nutshell {
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: normal;
 
-    .text-nutshell {
+        @media (min-width: 768px) {
+          margin-bottom: 162px;
+          font-size: 30px;
+          line-height: 46px;
+        }
 
-      margin-bottom: 162px;
+        color: var(--green);
 
-      font-weight: 500;
-      font-size: 28px;
-      line-height: normal;
-      @media (min-width: 768px) {
-      font-size: 30px;
-      line-height: 46px;
-      }
-      color: var(--green);
+        b {
+          display: block;
 
-      b {
-        display: block;
-
-        &:last-child {
+          &:last-child {}
         }
       }
     }

@@ -34,12 +34,18 @@
         font-size: 38px;
         line-height: 46px;
         margin-bottom: 24px;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       p {
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
 
         &:not(:last-child) {
           margin-bottom: 16px;
@@ -52,9 +58,16 @@
           padding-top: 30px;
 
           @media(min-width: 768px) {
-            padding-top: 0px;
+            // padding-top: 0px;
             font-size: 30px;
             line-height: 140%;
+            // position: absolute;
+            // left: 0;
+            // bottom: -94px;
+          }
+
+          @media(min-width: 992px) {
+            margin-top: 20px;
             position: absolute;
             left: 0;
             bottom: -94px;

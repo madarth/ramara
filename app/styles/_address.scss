@@ -1,7 +1,15 @@
 .address {
   &-wrapper {
     display: flex;
+    flex-direction: column;
+
+    @media(min-width: 992px) {
+      flex-direction: row;
+    }
+
     @include interpolate("padding-bottom", 768px, 56px, 992px, 112px, "ease-in");
+    padding-bottom: 0;
+
     .title {
       color: var(--gray);
       margin-bottom: 24px;
@@ -20,17 +28,40 @@
 
   &-list {
     display: flex;
+    flex-direction: column;
+
+    @media(min-width: 568px) {
+      flex-direction: row;
+    }
   }
 
 
   &-lists {
-    padding-left: 30px;
+    padding-top: 30px;
+
+    @media(min-width: 568px) {
+      padding-left: 30px;
+    }
+
+    .address-list:last-child {
+      @media(min-width: 568px) {
+        border-top: 1px solid var(--border-color);
+        padding-top: 14px;
+      }
+    }
 
     address {
-      margin-bottom: 30px;
+      strong {
+        font-weight: 500;
+      }
+
+      padding-bottom: 14px;
+      line-height: 20px;
 
       +address {
-        padding-left: 30px;
+        @media(min-width: 568px) {
+          padding-left: 30px;
+        }
       }
     }
   }

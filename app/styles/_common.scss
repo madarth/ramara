@@ -136,7 +136,8 @@ footer {
   justify-content: center;
   align-items: center;
   animation: text_rotate 10s linear infinite;
-  svg{
+
+  svg {
     width: 100%;
   }
 }
@@ -145,21 +146,6 @@ footer {
   top: initial;
   bottom: -60px;
   z-index: 15001;
-
-  svg {
-    circle {
-      fill: var(--green);
-    }
-
-    path {
-      fill: var(--white);
-    }
-  }
-}
-
-.circle-text2 {
-  bottom: -60px;
-  left: -60px;
 
   svg {
     circle {
@@ -204,13 +190,3 @@ footer {
   }
 }
 
-
-.cCompanyLogosContainer {
-  position: relative;
-
-  .cCompanyLogo {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-  }
-}

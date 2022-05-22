@@ -3,18 +3,42 @@
 
 
   h3 {
+    text-align: center;
     color: var(--gray);
     margin-bottom: 24px;
     font-weight: 500;
     font-size: 28px;
     line-height: 124%;
-
     @media(min-width: 768px) {
+      padding-left: 60px;
+    }
+    @media(min-width: 768px) {
+      // padding-left: 0px;
+      text-align: left;
       max-width: 298px;
       font-size: 32px;
       line-height: 124%;
     }
   }
+
+  .circle-text2 {
+    bottom: -60px;
+    left: 20px;
+    @media(min-width: 768px){
+      left: -60px;
+    }
+
+    svg {
+      circle {
+        fill: var(--green);
+      }
+
+      path {
+        fill: var(--white);
+      }
+    }
+  }
+
 
   p {
     max-width: 298px;
@@ -27,19 +51,23 @@
 
   .promise-lists {
     display: flex;
-    @media(min-width: 768px){
-      // justify-content: center;
-      padding-left: 60px;
-    }
+    flex-direction: column;
     align-items: center;
 
+    @media(min-width: 768px) {
+      flex-direction: row;
+      padding-left: 60px;
+    }
+
     .promise-image {
+      @media(min-width: 768px) {
       padding-right: 15px;
+      }
       position: relative;
     }
 
     .promise-list {
-      // padding-left: 15px;
+      padding-top: 80px;
       counter-reset: my-awesome-counter;
 
       li {
@@ -47,6 +75,7 @@
           padding-top: 16px;
           border-top: 1px solid rgba(51, 51, 51, 0.3);
         }
+
         padding-left: 46px;
         counter-increment: my-awesome-counter;
         font-weight: 500;
