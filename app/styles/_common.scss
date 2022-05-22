@@ -81,17 +81,6 @@ strong {
   font-weight: 500;
 }
 
-.headerSite,
-main,
-footer {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1140px;
-}
-
 @media (min-width: 768px) {
   .page__grid {
     backface-visibility: hidden;
@@ -194,3 +183,18 @@ footer {
   position: relative;
   z-index: 1;
 }
+
+
+/*  */
+.headerSite,
+main,
+footer {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px;
+  overflow-x: hidden;
+}
+/*  */

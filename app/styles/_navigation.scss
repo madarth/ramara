@@ -8,7 +8,6 @@
     z-index: 10;
     color: var(--white);
     padding: 0;
-    max-width: initial;
 
     .headerSite {
       position: relative;
@@ -16,9 +15,7 @@
       background: var(--green);
 
       &:before {
-        @media(min-width: 768px){
           content: "";
-        }
         display: block;
         position: absolute;
         background: var(--green);
