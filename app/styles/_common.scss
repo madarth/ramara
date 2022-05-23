@@ -196,5 +196,8 @@ footer {
   margin-left: auto;
   max-width: 1140px;
   overflow-x: hidden;
+  @media(min-width: 764px){
+    overflow-x: hidden;
+  }
 }
 /*  */
